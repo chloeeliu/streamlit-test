@@ -53,9 +53,16 @@ def log_stat(typ,log_label='all'):
          
 
 st.title('ETP使用数据')
+
 st.subheader('总体日活')
 
-df_log_all=log_stat('day','all')
-fig = px.line(df_log_all,x='date_',y='操作人_nunique')
+df_log_daily=log_stat('day','all')
+fig = px.line(df_log_daily,x='date_',y='操作人_nunique')
+st.plotly_chart(fig, use_container_width=True)
+
+st.subheader('总体月活')
+
+df_log_monthly=log_stat('month','all')
+fig = px.line(df_log_monthly,x='date_',y='操作人_nunique')
 st.plotly_chart(fig, use_container_width=True)
 
