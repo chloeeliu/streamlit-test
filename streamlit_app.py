@@ -25,4 +25,4 @@ with right_column:
    cat_feat = st.selectbox(
     'Select Categorical Feature', df.select_dtypes(exclude =   'number').columns)
    fig = px.histogram(df, x =cat_feat, color = 'survived' )
-st.plotly_chart(fig, use_container_width=True)
+   st.plotly_chart(fig, use_container_width=True)
